@@ -2,7 +2,11 @@ from machine import Pin, I2C
 
 ADDR = 0x39
 
-i2c1 = I2C(1, scl=Pin(5), sda=Pin(4), freq=100000)
+machine = os.uname().machine
+if "KidBright32" in machine:
+    i2c1 = I2C(1, scl=Pin(5), sda=Pin(4), freq=100000)
+else:
+    i2c1 = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
 
 data = 0
 
