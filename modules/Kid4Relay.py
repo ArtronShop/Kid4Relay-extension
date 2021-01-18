@@ -1,4 +1,5 @@
 from machine import Pin, I2C
+import os
 
 ADDR = 0x39
 
